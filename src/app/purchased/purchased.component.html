@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card card-header">
+    <p>
+      Total Stocks Owned: - {{investorPortfolio?.totalStocks}}
+    </p>
+    <br/>
+    <p>
+      Total Valuation: - {{investorPortfolio?.totalValue | number:'1.2'}}
+    </p>
+  </div>
+  <div class="card card-body">
+    <table class="table table-striped">
+      <thead>
+      <td>Symbol</td>
+      <td>Quantity</td>
+      </thead>
+      <tbody *ngFor="let item of investorPortfolio?.stocks">
+      <td>{{item.symbol}}</td>
+      <td>{{item.quantity}}</td>
+      </tbody>
+    </table>
+  </div>
+</div>

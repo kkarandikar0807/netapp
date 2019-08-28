@@ -1,0 +1,26 @@
+<div>
+  <button id="logout" class="btn btn-danger" (click)="logout()">Logout</button>
+  <h3>Current Stock Prices</h3>
+</div>
+
+<ul class="stock-list row">
+  <li class="card col-sm m-2" *ngFor="let stock of stocks">
+    <h5 class="card-title">{{stock.symbol}}</h5>
+    <div class="card-body">{{stock.price}}</div>
+    <div class="card-footer">
+      <button class="btn btn-primary" (click)="buyStocks(stock)">Buy</button>
+      <button class="btn btn-primary" (click)="showHistory(stock.symbol)">Show History</button>
+    </div>
+  </li>
+</ul>
+
+<div class="container">
+  <div class="row">
+    <div class="col col-6">
+      <app-purchased [investorPortfolio] = "myStocks"></app-purchased>
+    </div>
+    <div class="col col-6">
+      <app-history [stockName]="stockHistoryName"></app-history>
+    </div>
+  </div>
+</div>
